@@ -1,0 +1,13 @@
+pipeline {
+    agent any  // Use any available agent or executor
+
+    environment {
+        DEPLOY_ENV = 'staging'  // Define the deployment environment
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Clone the repository
+                git 'https://github.com/your-repo.git'
+            }
